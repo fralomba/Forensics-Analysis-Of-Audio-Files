@@ -14,4 +14,5 @@ with exiftool.ExifTool() as et:
 for metadata in allMetadatas:
 	#FORMATO QUERY MYSQL: INSERT INTO myDb.myTable('','') VALUES ('', '')
 	metadata['groundtruth'] = deviceModel.split('.')[0]
+	# posso aggiungere cosa cazzo voglio 
 	sql.insertFromDic(metadata)
