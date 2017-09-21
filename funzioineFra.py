@@ -14,10 +14,14 @@ dato2['stamina'] = 'poca'
 
 def distanceBetweenDictionaries(query, gallery):
 	distance = 0
-	#TODO pela fai
+	for key in query:
+		distance += distaceBetweenPair(query[key], gallery[key])
 	return distance
 
 def distaceBetweenPair(p, q):
 	distance = 0
 	#TODO pela fai
 	return distance
+
+
+distanceBetweenDictionaries(dato2, dato1)
