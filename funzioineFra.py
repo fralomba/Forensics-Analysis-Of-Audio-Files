@@ -8,7 +8,7 @@ dato1['stamina'] = 'molto poca'
 dato2 = {}
 dato2['nome'] = 'mine'
 dato2['peso'] = '87kg'
-dato2['sesso'] = 'M'
+dato2['sesso'] = '1'
 dato2['forza'] = 'media'
 dato2['stamina'] = 'poca'
 
@@ -16,12 +16,16 @@ def distanceBetweenDictionaries(query, gallery):
 	distance = 0
 	for key in query:
 		distance += distaceBetweenPair(query[key], gallery[key])
+
+	print distance	
 	return distance
 
 def distaceBetweenPair(p, q):
 	distance = 0
-	#TODO pela fai
+	
+	if p != q:
+		distance = 1
+
 	return distance
 
-
-distanceBetweenDictionaries(dato2, dato1)
+distanceBetweenDictionaries(dato1, dato2)
