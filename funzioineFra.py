@@ -1,3 +1,7 @@
+blacklist = {'groundtruth', 'SourceFile', 'FileName'}
+whitelist = {'Encoder'}
+
+
 dato1 = {}
 dato1['nome'] = 'hajy'
 dato1['peso'] = '678'
@@ -15,13 +19,18 @@ dato2['stamina'] = 'poca'
 def distanceBetweenDictionaries(query, gallery):
 	distance = 0
 	for key in query:
-		distance += distaceBetweenPair(query[key], gallery[key])
+		multiplier = 1
+		if key in whitelist:
+				multiplier = 10
+		if key not in blacklist:
+			distance += distaceBetweenPair(query[key], gallery[key])*multiplier
 	return distance
 
 def distaceBetweenPair(p, q):
 	distance = 0
-	#TODO pela fai
+	#print str(p) + ' vs '+str(q)
+	if str(p) != str(q):
+		distance += 1	
 	return distance
 
 
-distanceBetweenDictionaries(dato2, dato1)
