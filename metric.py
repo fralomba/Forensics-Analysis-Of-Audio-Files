@@ -1,8 +1,12 @@
-<<<<<<< HEAD:funzioineFra.py
-blacklist = {'groundtruth', 'SourceFile', 'FileName', 'id', 'TrackModifyDate', 'FileAccessDate', 'FileModifyDate'}
-=======
-blacklist = {'groundtruth', 'SourceFile', 'FileName', 'id'}
->>>>>>> origin/master:metric.py
+blacklist = {
+			 'groundtruth', 
+			 'SourceFile', 
+			 'FileName', 
+			 'id', 
+			 'TrackModifyDate', 
+			 'FileAccessDate', 
+			 'FileModifyDate'
+			 }
 whitelist = {'Encoder'}
 
 def distanceBetweenDictionaries(query, gallery):
