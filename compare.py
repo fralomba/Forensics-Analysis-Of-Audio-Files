@@ -2,7 +2,6 @@
 import sqlInterface as sql
 import exiftool
 import metric
-import numpy as np
 import operator
 # with exiftool.ExifTool() as et:
 # 	print path+file
@@ -26,6 +25,7 @@ for i in range(1, totRows+1):
 		distance = metric.distanceBetweenDictionaries(queryElement, galleryElement)
 		matchResult[galleryElement['groundtruth']] = distance
 
+print matchResult
 sortedMatchResult = sorted(matchResult.items(), key=operator.itemgetter(1))
 print "i migiori 5 risultati, in ordine, sono: \n"
 print sortedMatchResult[0:5]
