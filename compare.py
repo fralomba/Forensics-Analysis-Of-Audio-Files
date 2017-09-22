@@ -9,7 +9,7 @@ import operator
 # 	metadata = et.get_metadata_batch('/User/adel/Desktop/Samples/GalaxyS5.m4a')
 
 
-filename = 'GalaxyS5-audacity.m4a'
+filename = 'redmi3.mp3'
 file = ["Samples/"+filename]
 
 matchResult = {}

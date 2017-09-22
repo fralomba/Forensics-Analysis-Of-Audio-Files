@@ -8,7 +8,9 @@ blacklist = {
 			 'FileModifyDate'
 			}
 whitelist = {
-			 'Encoder'
+			 'Encoder',
+			 'FileTypeExtension',
+			 'TimeScale'
 			}
 
 def distanceBetweenDictionaries(query, gallery):
@@ -16,9 +18,9 @@ def distanceBetweenDictionaries(query, gallery):
 	for key in query:
 
 		multiplier = 1
-		if key in whitelist:
-				multiplier = 10
-		if key not in blacklist:
+		if key not in blacklist and (key in query) and (key in gallery):
+			if key in whitelist:
+				multiplier = 20
 			distance += distaceBetweenPair(query[key], gallery[key])*multiplier
 	return distance
 
