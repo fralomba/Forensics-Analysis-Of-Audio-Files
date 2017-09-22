@@ -47,7 +47,12 @@ def runQuery(query):
         connection.close()
     return result
 
-
+def simplyfieDictionary(dictionary):
+    newDict = {}
+    for key in dictionary:
+        friendlyKey = key.split(":")[-1]
+        newDict[friendlyKey] = str(dictionary[key])
+    return newDict
 
 
 
