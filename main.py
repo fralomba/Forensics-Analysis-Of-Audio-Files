@@ -5,7 +5,11 @@ import exiftool
 # 	print path+file
 # 	metadata = et.get_metadata_batch('/User/adel/Desktop/Samples/GalaxyS5.m4a')
 
+<<<<<<< HEAD
 deviceModel = 'LGG3.3gp'
+=======
+deviceModel = 'WAvocal.ogg'
+>>>>>>> origin/master
 files = ["Samples/"+deviceModel]
 #files = ["Samples/GalaxyS5.m4a"]
 

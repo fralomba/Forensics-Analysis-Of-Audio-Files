@@ -1,9 +1,14 @@
+<<<<<<< HEAD:funzioineFra.py
 blacklist = {'groundtruth', 'SourceFile', 'FileName', 'id', 'TrackModifyDate', 'FileAccessDate', 'FileModifyDate'}
+=======
+blacklist = {'groundtruth', 'SourceFile', 'FileName', 'id'}
+>>>>>>> origin/master:metric.py
 whitelist = {'Encoder'}
 
 def distanceBetweenDictionaries(query, gallery):
 	distance = 0
 	for key in query:
+
 		multiplier = 1
 		if key in whitelist:
 				multiplier = 10
@@ -13,9 +18,6 @@ def distanceBetweenDictionaries(query, gallery):
 
 def distaceBetweenPair(p, q):
 	distance = 0
-	#print str(p) + ' vs '+str(q)
 	if str(p) != str(q):
 		distance += 1	
 	return distance
-
-
