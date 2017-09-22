@@ -9,12 +9,8 @@ import operator
 # 	metadata = et.get_metadata_batch('/User/adel/Desktop/Samples/GalaxyS5.m4a')
 
 
-filename = 'GalaxyS5.m4a'
+filename = 'GalaxyS5-audacity.m4a'
 file = ["Samples/"+filename]
-#files = ["Samples/GalaxyS5.m4a"]
-
-devices = []
-distances = []
 
 matchResult = {}
 
@@ -28,11 +24,7 @@ for i in range(1, totRows+1):
 	galleryElement = sql.runQuery("SELECT * FROM dataset WHERE id="+str(i))
 	if galleryElement:
 		distance = metric.distanceBetweenDictionaries(queryElement, galleryElement)
-		devices.append(str(galleryElement['groundtruth']))
-		distances.append(distance)
-
-for i in range(len(devices)):
-	matchResult[devices[i]] = distances[i]
+		matchResult[galleryElement['groundtruth']] = distance
 
 sortedMatchResult = sorted(matchResult.items(), key=operator.itemgetter(1))
 print "i migiori 5 risultati, in ordine, sono: \n"

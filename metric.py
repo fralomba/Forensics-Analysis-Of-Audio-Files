@@ -6,8 +6,10 @@ blacklist = {
 			 'TrackModifyDate', 
 			 'FileAccessDate', 
 			 'FileModifyDate'
-			 }
-whitelist = {'Encoder'}
+			}
+whitelist = {
+			 'Encoder'
+			}
 
 def distanceBetweenDictionaries(query, gallery):
 	distance = 0
