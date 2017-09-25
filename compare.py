@@ -2,22 +2,26 @@
 import sqlInterface as sql
 import exiftool
 import metric
-import numpy as np
 import operator
+import sys
 # with exiftool.ExifTool() as et:
 # 	print path+file
 # 	metadata = et.get_metadata_batch('/User/adel/Desktop/Samples/GalaxyS5.m4a')
 
 
-filename = 'redmi3.mp3'
-file = ["Samples/"+filename]
+#provo a leggere da command line
+if len(sys.argv) > 1:
+	filename = sys.argv[1]
+else:
+	filename = 'iphone5s.m4a'
 
+file = ["Samples/"+filename]
 matchResult = {}
 
 with exiftool.ExifTool() as et:
     metadata = et.get_metadata_batch(file)[0]
-
 totRows = sql.runQuery("SELECT max(id) as 'tot' FROM dataset ")['tot']
+
 #    queryElement = sql.runQuery("SELECT * FROM dataset WHERE id="+str(totRows))
 queryElement = sql.simplyfieDictionary(metadata)
 for i in range(1, totRows+1):

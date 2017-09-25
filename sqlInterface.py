@@ -13,9 +13,9 @@ def insertFromDic(dictionary):
         data = str(dictionary[key])
         
         updateTables(friendlyKey)
-
-        queryHead += ",`" + friendlyKey.replace("`", '"') + "`"
-        queryValues += ",'" + data.replace("'", '"') + "'"
+        if not(friendlyKey in queryHead):
+            queryHead += ",`" + friendlyKey.replace("`", '"') + "`"
+            queryValues += ",'" + data.replace("'", '"') + "'"
 
     query = queryHead + queryValues + ")"
     runQuery(query)
@@ -24,7 +24,7 @@ def insertFromDic(dictionary):
 def updateTables(field):
     connection = pymysql.connect(host=host,user=user,password=pw,db=database,charset='utf8mb4',port=port,cursorclass=pymysql.cursors.DictCursor)
     #this query check if there is an occurrence of the field
-    query = "SELECT COUNT(Name) as 'occurrencies' FROM knownMetadata WHERE Name = '"+field+"'"
+    query = "SELECT COUNT(Name) as 'occurrencies' FROM knownMetadata WHERE Name = '"+field.replace(' ','')+"'"
     
     result = runQuery(query)
     #if there is not...
