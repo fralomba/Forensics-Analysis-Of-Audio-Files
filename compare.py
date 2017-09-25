@@ -13,7 +13,7 @@ import sys
 if len(sys.argv) > 1:
 	filename = sys.argv[1]
 else:
-	filename = 'iphone5s.m4a'
+	filename = 'LGG6.m4a'
 
 file = ["Samples/"+filename]
 matchResult = {}
