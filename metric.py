@@ -1,16 +1,16 @@
 blacklist = {
-			 'groundtruth', 
-			 'SourceFile', 
-			 'FileName', 
-			 'id', 
-			 'TrackModifyDate', 
-			 'FileAccessDate', 
-			 'FileModifyDate'
+			 # 'groundtruth', 
+			 # 'SourceFile', 
+			 # 'FileName', 
+			 # 'id', 
+			 # 'TrackModifyDate', 
+			 # 'FileAccessDate', 
+			 # 'FileModifyDate'
 			}
 whitelist = {
-			 'Encoder',
-			 'FileTypeExtension',
-			 'TimeScale'
+			 # 'Encoder',
+			 # 'FileTypeExtension',
+			 # 'TimeScale'
 			}
 
 def distanceBetweenDictionaries(query, gallery):

@@ -9,11 +9,10 @@ def insertFromDic(dictionary):
     queryHead, queryValues = "INSERT INTO `dataset`(`id`", ") VALUES (NULL"
     for key in dictionary:
         
-        friendlyKey = key.split(":")[-1]
         data = str(dictionary[key])
-        updateTables(friendlyKey)
-        if not(friendlyKey in queryHead):
-            queryHead += ",`" + friendlyKey.replace("`", '"') + "`"
+        updateTables(key)
+        if not(key in queryHead):
+            queryHead += ",`" + key.replace("`", '"') + "`"
             queryValues += ",'" + data.replace("'", '"') + "'"
 
     query = queryHead + queryValues + ")"
