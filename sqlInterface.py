@@ -11,18 +11,18 @@ def insertFromDic(dictionary):
         
         friendlyKey = key.split(":")[-1]
         data = str(dictionary[key])
-        
         updateTables(friendlyKey)
         if not(friendlyKey in queryHead):
             queryHead += ",`" + friendlyKey.replace("`", '"') + "`"
             queryValues += ",'" + data.replace("'", '"') + "'"
 
     query = queryHead + queryValues + ")"
+
     runQuery(query)
 
 #this function get a Filed as parameter and, if it's a never seen Metadata, tables are updated to contain it.
 def updateTables(field):
-    connection = pymysql.connect(host=host,user=user,password=pw,db=database,charset='utf8mb4',port=port,cursorclass=pymysql.cursors.DictCursor)
+    #connection = pymysql.connect(host=host,user=user,password=pw,db=database,charset='utf8mb4',port=port,cursorclass=pymysql.cursors.DictCursor)
     #this query check if there is an occurrence of the field
     query = "SELECT COUNT(Name) as 'occurrencies' FROM knownMetadata WHERE Name = '"+field.replace(' ','')+"'"
     

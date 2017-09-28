@@ -4,18 +4,14 @@ import exiftool
 import metric
 import operator
 import sys
-# with exiftool.ExifTool() as et:
-# 	print path+file
-# 	metadata = et.get_metadata_batch('/User/adel/Desktop/Samples/GalaxyS5.m4a')
-
 
 #provo a leggere da command line
 if len(sys.argv) > 1:
 	filename = sys.argv[1]
 else:
-	filename = 'LGG6.m4a'
+	filename = 'GalaxyS5.m4a'
 
-file = ["Samples/"+filename]
+file = ["/Users/adel/Desktop/FAOAF/Samples/"+filename]
 matchResult = {}
 
 with exiftool.ExifTool() as et:
@@ -30,9 +26,9 @@ for i in range(1, totRows+1):
 		distance = metric.distanceBetweenDictionaries(queryElement, galleryElement)
 		matchResult[galleryElement['groundtruth']] = distance
 
-print matchResult
+
 sortedMatchResult = sorted(matchResult.items(), key=operator.itemgetter(1))
-print "i migiori 5 risultati, in ordine, sono: \n"
+
 print sortedMatchResult[0:5]
 
 
