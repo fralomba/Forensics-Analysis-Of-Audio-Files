@@ -32,6 +32,10 @@ else{
 
 ?>
 
-<button class="container"> BACK </button>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="js/chartPlotter.js"></script>
+
+<button class="container"> BACK </button>
+<button class="container"> INFO </button>
+<button class="container"> PELA </button>
+<button class="container"> WHY HECTOR? </button>

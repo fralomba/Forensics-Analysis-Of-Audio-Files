@@ -4,7 +4,7 @@ import json
 
 
 
-deviceModel = 'GalaxyS4.m4a'
+deviceModel = 'iphone6-audacity.m4a'
 file = ["Samples/"+deviceModel]					
 row = utils.extractRow(file, deviceModel)
 sql.insertFromDic(row)
