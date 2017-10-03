@@ -1,16 +1,20 @@
 blacklist = {
-			 # 'groundtruth', 
-			 # 'SourceFile', 
-			 # 'FileName', 
-			 # 'id', 
-			 # 'TrackModifyDate', 
-			 # 'FileAccessDate', 
-			 # 'FileModifyDate'
+			 'ET:groundtruth', 
+			 'ET:SourceFile', 
+			 'ET:FileName', 
+			 'ET:id', 
+			 'ET:TrackModifyDate', 
+			 'ET:FileAccessDate', 
+			 'ET:FileModifyDate',
+			 'ET:TrackModifyDate',
+			 'ET:TrackCreateDate'
 			}
 whitelist = {
-			 # 'Encoder',
-			 # 'FileTypeExtension',
-			 # 'TimeScale'
+			 'ET:Encoder',
+			 'ET:FileTypeExtension',
+			 'ET:TimeScale',
+			 'MI:other_frame_rate',
+			 'ET:HandlerType'
 			}
 
 def distanceBetweenDictionaries(query, gallery):
@@ -20,7 +24,7 @@ def distanceBetweenDictionaries(query, gallery):
 		multiplier = 1
 		if key not in blacklist and (key in query) and (key in gallery):
 			if key in whitelist:
-				multiplier = 20
+				multiplier = 80
 			distance += distaceBetweenPair(query[key], gallery[key])*multiplier
 	return distance
 
