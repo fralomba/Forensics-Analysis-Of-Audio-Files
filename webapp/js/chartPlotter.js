@@ -1,5 +1,6 @@
-function myFunc(){
-	alert("ahah");
+function ciao(){
+
+	window.location.href = 'http://versus.php?obj="+"';
 }
 
 
@@ -76,14 +77,16 @@ function change(data) {
 
 	var text = svg.select(".labels").selectAll("text")
 		.data(pie(data), key);
+	
+
 
 	text.enter()
 		.append("text")
 		.attr("dy", ".35em")
-		.attr("onclick", "myFunc();")
 		.text(function(d) {
 			return d.data.label;
-		});
+		})
+		.attr("onmouse", "function ciao();");
 	
 	function midAngle(d){
 		return d.startAngle + (d.endAngle - d.startAngle)/2;

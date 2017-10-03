@@ -23,7 +23,10 @@ def extractRow(file, deviceModel):
 		row['groundtruth'] = deviceModel.split('.')[0]
 	#EXTRACT FROM EXIFTOOL
 		for key in metadata:
-			row[cleanKey(key,'ET')] = metadata[key]
+			if metadata[key]:
+				row[cleanKey(key,'ET')] = metadata[key]
+			else:
+				row[cleanKey(key,'ET')] = "PENE"
 
 	#EXTRACT FROM MEDIA INFO
 		for firstKey in mediaInfo:
