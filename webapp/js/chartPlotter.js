@@ -59,9 +59,6 @@ updateTreshold();
 function change(data) {
 	
 
-
-
-
 	/* ------- PIE SLICES -------*/
 	var slice = svg.select(".slices").selectAll("path.slice")
 		.data(pie(data), key);

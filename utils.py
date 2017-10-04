@@ -34,3 +34,5 @@ def extractRow(file, deviceModel):
 				for key in secondKey:
 					row[cleanKey(key,'MI')] = secondKey[key]
 		return row
+
+

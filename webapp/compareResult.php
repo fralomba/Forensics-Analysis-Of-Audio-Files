@@ -37,11 +37,5 @@ else{
 
 ?>
 
-
 <button class="container" onmouseover="printDatas()"><a href="/webapp/index.php">BACK</a></button>
 
-<script type="text/javascript">
-    function printDatas(){
-        alert(datas);
-    }
-</script>
