@@ -37,3 +37,8 @@ text:hover{
 	border: 1px solid #666;
 	border-radius: 6px;
 }
+#select_treshold{
+	width: 50%;
+	position: relative;
+	top: 5px;
+}

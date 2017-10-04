@@ -1,8 +1,11 @@
-function ciao(){
-
-	window.location.href = 'http://versus.php?obj="+"';
+function updateTreshold(){
+	var slider = $('input[name=select_treshold]');
+	var val = slider.val();
+	treshold = val*100;
+	change(tresholding(datas));
 }
 
+var treshold = 3000;
 
 var svg = d3.select("body")
 	.append("svg")
@@ -43,12 +46,21 @@ var color = d3.scale.ordinal()
 
 
 
+function tresholding(raw_data){
+	var data = [];
+	for(i = 0, j = 0; i < raw_data.length; i++)
+		if(raw_data[i].value > treshold)
+			data[j++] = raw_data[i];
+	return data;
+}
 
-
-change(datas);
-
+updateTreshold();
 
 function change(data) {
+	
+
+
+
 
 	/* ------- PIE SLICES -------*/
 	var slice = svg.select(".slices").selectAll("path.slice")

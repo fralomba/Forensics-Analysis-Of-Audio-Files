@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <?php
@@ -31,11 +33,13 @@ else{
 	exit;}
 
 ?>
-
+<div>
+    treshold:
+    <input type="range" id="select_treshold" name="select_treshold" min="0" max="100" onchange="updateTreshold()">
+</div>
+<br>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="js/chartPlotter.js"></script>
 
 <button class="container"> BACK </button>
 <button class="container"> INFO </button>
-<button class="container"> PELA </button>
-<button class="container"> WHY HECTOR? </button>
