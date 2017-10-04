@@ -3,6 +3,7 @@ import sqlInterface as sql
 import operator
 import metric
 import sys
+import json
 import utils 
 
 def perpareToJSON(dic):
@@ -23,8 +24,8 @@ matchResult = {}
 # with exiftool.ExifTool() as et:
 #     metadata = et.get_metadata_batch(file)[0]
 
-queryElement = utils.extractRow(file1, 'NONE')
-galleryElement = utils.extractRow(file2, 'NONE')
+queryElement = json.dumps(utils.extractRow(file1, 'NONE'))
+galleryElement = json.dumps(utils.extractRow(file1, 'NONE'))
 
 qResult = {}
 for qKey in queryElement:

@@ -40,7 +40,6 @@ else{
 <div id="qContainer" class="container"></div>
 <div id="gContainer" class="container"></div>
 
-
 <script type="text/javascript">
     var qContainer = $('#qContainer');
     for(i = 0; i < qData.length; i++){
@@ -50,4 +49,4 @@ else{
     for(i = 0; i < gData.length; i++){
         console.log(gData[i].value);
     }
-</script>
+</script>7ef34e2e6d614fa2970afa42dcef9b5
