@@ -2,9 +2,8 @@ import sqlInterface as sql
 import utils 
 import json
 
+deviceModel = 'huaweiNovaPlus.amr'
 
-
-deviceModel = 'iphone6-audacity.m4a'
 file = ["Samples/"+deviceModel]					
 row = utils.extractRow(file, deviceModel)
 sql.insertFromDic(row)
