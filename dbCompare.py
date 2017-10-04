@@ -13,22 +13,21 @@ def perpareToJSON(dic):
 
 if len(sys.argv) > 1:
 	file = [sys.argv[1]]
-
 else:
-	filename = 'iphone7.m4a'
-	file = ["../Samples/"+filename]
-matchResult = {}
+	filename = 'iphone6.m4a'
+	file = ["/Users/francesco/Desktop/Forensics-Analysis-Of-Audio-Files/Samples/"+filename]
 
+matchResult = {}
 # with exiftool.ExifTool() as et:
 #     metadata = et.get_metadata_batch(file)[0]
 totRows = sql.runQuery("SELECT max(id) as 'tot' FROM dataset ")['tot']
 
 queryElement = utils.extractRow(file, 'NONE')
 
-galleryElement = sql.runQuery("SELECT * FROM dataset WHERE id="+str(i))
-
-if galleryElement:
-	distance = metric.distanceBetweenDictionaries(queryElement, galleryElement)
-	matchResult[galleryElement['groundtruth']] = 1000000/distance
+for i in range(1, totRows+1):
+	galleryElement = sql.runQuery("SELECT * FROM dataset WHERE id="+str(i))
+	if galleryElement:
+		distance = metric.distanceBetweenDictionaries(queryElement, galleryElement)
+		matchResult[galleryElement['groundtruth']] = 10000000/distance
 
 print perpareToJSON(matchResult)

@@ -20,7 +20,7 @@ if(isset($_POST['action']) and $_POST['action'] == 'upload')
 
 $command = 'export LC_ALL=en_US.UTF-8
 		 export LANG=en_US.UTF-8
-		 python ../compare.py '.UPLOAD_DIR.$file['name'];
+		 python ../dbCompare.py '.UPLOAD_DIR.$file['name'];
 
 $output = shell_exec($command);
 
@@ -36,3 +36,6 @@ else{
 <script src="js/chartPlotter.js"></script>
 
 <button class="container"> BACK </button>
+<button class="container"> INFO </button>
+<button class="container"> PELA </button>
+<button class="container"> WHY HECTOR? </button>
