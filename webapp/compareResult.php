@@ -1,9 +1,9 @@
 <!DOCTYPE html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <?php
-
 define("UPLOAD_DIR", "uploads/");
 if(isset($_POST['action']) and $_POST['action'] == 'upload')
 {
@@ -30,18 +30,24 @@ $command = 'export LC_ALL=en_US.UTF-8
 $output = shell_exec($command);
 
 if($output != NULL)
-echo "<script>var datas;datas =".$output.";</script>";
+echo "<script type='text/javascript'>".$output."</script>";
+/*SE TUTTO VA BENE HO 2 VARIABILI: qData e gData*/
 else{
 	echo "<h1>Something Wrong<h1>";
 	exit;}
 
 ?>
+<div id="qContainer" class="container"></div>
+<div id="gContainer" class="container"></div>
 
-
-<button class="container" onmouseover="printDatas()"><a href="/webapp/index.php">BACK</a></button>
 
 <script type="text/javascript">
-    function printDatas(){
-        alert(datas);
+    var qContainer = $('#qContainer');
+    for(i = 0; i < qData.length; i++){
+        console.log(qData[i].value);
+    }
+    var gContainer = $('#qContainer');
+    for(i = 0; i < gData.length; i++){
+        console.log(gData[i].value);
     }
 </script>
