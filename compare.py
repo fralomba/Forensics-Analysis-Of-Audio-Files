@@ -16,16 +16,16 @@ if len(sys.argv) > 2:
 	file1 = [sys.argv[1]]
 	file2 = [sys.argv[2]]
 else:
-	file1 = ["/Users/adel/Desktop/FAOAF/Samples/iphone7.m4a"]
-	file2 = ["/Users/adel/Desktop/FAOAF/Samples/iphone6s.m4a"]
+	file1 = ["/Users/francesco/Desktop/Forensics-Analysis-Of-Audio-Files/Samples/iphone7.m4a"]
+	file2 = ["/Users/francesco/Desktop/Forensics-Analysis-Of-Audio-Files/Samples/iphone6s.m4a"]
 
 matchResult = {}
 
 # with exiftool.ExifTool() as et:
 #     metadata = et.get_metadata_batch(file)[0]
 
-queryElement = json.dumps(utils.extractRow(file1, 'NONE'))
-galleryElement = json.dumps(utils.extractRow(file1, 'NONE'))
+queryElement = utils.extractRow(file1, 'NONE')
+galleryElement = utils.extractRow(file2, 'NONE')
 
 qResult = {}
 for qKey in queryElement:
