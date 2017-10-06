@@ -22,7 +22,7 @@ matchResult = {}
 #     metadata = et.get_metadata_batch(file)[0]
 totRows = sql.runQuery("SELECT max(id) as 'tot' FROM dataset ")['tot']
 
-queryElement = utils.extractRow(file, 'NONE')
+queryElement = utils.extractRow(file)
 
 for i in range(1, totRows+1):
 	galleryElement = sql.runQuery("SELECT * FROM dataset WHERE id="+str(i))

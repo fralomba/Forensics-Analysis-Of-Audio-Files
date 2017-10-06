@@ -42,3 +42,45 @@ text:hover{
 	position: relative;
 	top: 5px;
 }
+
+.fileName{
+	display: inline;
+	width: 33.2%;
+	float: left;
+}
+/*
+#file1{
+	background-color: blue;
+}
+
+#file2{
+	background-color: yellow;
+}
+
+#file3{
+	background-color: red;
+}*/
+
+.column{
+	height: 100%;
+	width: 33.2%;
+	display: inline-block;
+	float: left;
+
+}
+.column#left{
+	background-color: red;
+}
+
+.column#center{
+	background-color: yellow
+}
+
+.column#right{
+	background-color: green
+}
+
+
+
+
+
