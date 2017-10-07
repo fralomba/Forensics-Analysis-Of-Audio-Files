@@ -24,8 +24,8 @@ matchResult = {}
 # with exiftool.ExifTool() as et:
 #     metadata = et.get_metadata_batch(file)[0]
 
-queryElement = json.dumps(utils.extractRow(file1, 'NONE'))
-galleryElement = json.dumps(utils.extractRow(file1, 'NONE'))
+queryElement = utils.extractRow(file1, 'NONE')
+galleryElement = utils.extractRow(file2, 'NONE')
 
 qResult = {}
 for qKey in queryElement:
