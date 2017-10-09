@@ -1,11 +1,20 @@
 function updateTreshold(){
 	var slider = $('input[name=select_treshold]');
 	var val = slider.val();
-	treshold = val*100;
+	treshold = val/1000*getMaxValue(datas)-1;
 	change(tresholding(datas));
 }
 
-var treshold = 3000;
+function getMaxValue(data){
+	max = 0;
+	for(var i = 0; i < data.length; i++){
+		if( max < data[i].value)
+			max = data[i].value;
+	}
+	return max;
+}
+
+var treshold = 100;
 
 var svg = d3.select("body")
 	.append("svg")
@@ -55,7 +64,7 @@ function tresholding(raw_data){
 }
 
 updateTreshold();
-
+console.log(datas);
 function change(data) {
 	
 

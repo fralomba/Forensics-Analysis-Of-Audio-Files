@@ -21,11 +21,11 @@ else:
 
 matchResult = {}
 
-# with exiftool.ExifTool() as et:
+# with exiftool.ExifTool() as et: 
 #     metadata = et.get_metadata_batch(file)[0]
 
-queryElement = utils.extractRow(file1, 'NONE')
-galleryElement = utils.extractRow(file2, 'NONE')
+queryElement = utils.extractRow(file1)
+galleryElement = utils.extractRow(file2)
 
 qResult = {}
 for qKey in queryElement:

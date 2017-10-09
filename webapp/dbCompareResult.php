@@ -37,7 +37,7 @@ else{
 
 <div>
     treshold:
-    <input type="range" id="select_treshold" name="select_treshold" min="0" max="100" onchange="updateTreshold()">
+    <input type="range" id="select_treshold" name="select_treshold" min="0" max="1000" onchange="updateTreshold()">
 </div>
 <br>
 <script src="http://d3js.org/d3.v3.min.js"></script>
