@@ -13,11 +13,11 @@ def perpareToJSON(dic):
 	return string+"]"
 
 if len(sys.argv) > 2:
-	file1 = [sys.argv[1]]
-	file2 = [sys.argv[2]]
+	file1 = sys.argv[1]
+	file2 = sys.argv[2]
 else:
-	file1 = ["/Users/adel/Desktop/FAOAF/Samples/iphone7.m4a"]
-	file2 = ["/Users/adel/Desktop/FAOAF/Samples/iphone6s.m4a"]
+	file1 = "/Users/adel/Desktop/FAOAF/Samples/iphone7.m4a"
+	file2 = "/Users/adel/Desktop/FAOAF/Samples/iphone6s.m4a"
 
 matchResult = {}
 

@@ -12,10 +12,10 @@ def perpareToJSON(dic):
 	return string+"]"
 
 if len(sys.argv) > 1:
-	file = [sys.argv[1]]
+	file = sys.argv[1]
 else:
 	filename = 'iphone6.m4a'
-	file = ["/Users/francesco/Desktop/Forensics-Analysis-Of-Audio-Files/Samples/"+filename]
+	file = "/Users/francesco/Desktop/Forensics-Analysis-Of-Audio-Files/Samples/"+filename
 
 matchResult = {}
 # with exiftool.ExifTool() as et:

@@ -46,7 +46,6 @@ else{
         console.log(qData[i].value);
     }
     var gContainer = $('#qContainer');
-    for(i = 0; i < gData.length; i++){
-        console.log(gData[i].value);
-    }
+    
+    gContainer.innerHTML="gData";
 </script>

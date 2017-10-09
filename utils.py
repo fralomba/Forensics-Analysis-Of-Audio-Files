@@ -11,10 +11,10 @@ def cleanKey(key, prefix):
 #files = ["Samples/GalaxyS5.m4a"]
 def extractRow(file, deviceModel):
 	with exiftool.ExifTool() as et:
-	    allMetadatas = et.get_metadata_batch(file)
+	    allMetadatas = et.get_metadata_batch([file])
 	    #print metadata
 
-	MI = MediaInfo.parse("Samples/"+deviceModel)
+	MI = MediaInfo.parse(file)
 	mediaInfo = json.loads(MI.to_json())
 
 	for metadata in allMetadatas:
