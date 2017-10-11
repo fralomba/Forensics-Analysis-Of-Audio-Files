@@ -6,10 +6,16 @@ import sys
 import json
 import utils 
 
-def perpareToJSON(dic):
+def perpareToJSON(dic1, dic2):
 	string = '['
-	for key in dic:
-		string += "{ 'label':' " + str(key).replace("'",'"') + "', 'value':'" + str(dic[key]).replace("'",'"') + "'},"
+	for key in dic1:
+		if key in dic2:
+			string += "{ 'label':' " + str(key).replace("'",'"') + "', 'value1':'" + str(dic1[key]).replace("'",'"') + "', 'value2':'" + str(dic2[key]).replace("'",'"') + "'},"
+		else:
+			string += "{ 'label':' " + str(key).replace("'",'"') + "', 'value1':'" + str(dic1[key]).replace("'",'"') + "', 'value2':' NON MESSO'},"
+	for key in dic2:
+		if key not in dic1:
+			string += "{ 'label':' " + str(key).replace("'",'"') + "', 'value1':'NON MESSO', 'value2':'" + str(dic2[key]).replace("'",'"') + "'},"
 	return string+"]"
 
 if len(sys.argv) > 2:
@@ -17,7 +23,7 @@ if len(sys.argv) > 2:
 	file2 = sys.argv[2]
 else:
 	file1 = "/Users/adel/Desktop/FAOAF/Samples/iphone7.m4a"
-	file2 = "/Users/adel/Desktop/FAOAF/Samples/iphone6s.m4a"
+	file2 = "/Users/adel/Desktop/FAOAF/Samples/GalaxyS4.m4a"
 
 matchResult = {}
 
@@ -37,6 +43,5 @@ for gKey in galleryElement:
 	if (gKey not in queryElement) or not(galleryElement[gKey] == queryElement[gKey]):
 		gResult[gKey] = galleryElement[gKey]
 
-print "var qData = " + perpareToJSON(qResult) + ";"
-print "var gData = " + perpareToJSON(gResult) + ";"
+print "var data = " + perpareToJSON(qResult, gResult) + ";"
 		
