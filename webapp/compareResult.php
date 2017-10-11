@@ -46,26 +46,35 @@ foreach($filesToDelete as $del){ // iterate files
 
 ?>
 
-<div id = "left" class="column">dfgh</div>
-<div id = "center" class="column">dfgh</div>
-<div id = "right" class="column">fdgh</div>
-
+<div id = "container" style="background: red; min-height: 100px;"></div>
 
 <script type="text/javascript">
-
-    var qContainer = $('#qContainer');
-    for(i = 0; i < qData.length; i++){
-        console.log(qData[i].value);
-    }
-    var gContainer = $('#qContainer');
-    
-    gContainer.innerHTML="gData";
-    var qContainer = $('#left');
-    // for(i = 0; i < qData.length; i++){
-    //     console.log(qData[i].value);
-    // }
-    var gContainer = $('#right');
-    // for(i = 0; i < gData.length; i++){
-    //     console.log(gData[i].value);
-    // }
+    $(document).ready(function(){
+        var container = document.getElementById("container");
+        for(var i = 0; i < data.length; i++){
+            //alert(data[i].label);
+            var leftDiv = document.createElement("DIV");
+            leftDiv.setAttribute('class','left column');
+            leftDiv.innerHTML = data[i].value1;
+            var centralDiv = document.createElement("DIV");
+            centralDiv.setAttribute('class','central column');
+            centralDiv.innerHTML = data[i].label;
+            var rightDiv = document.createElement("DIV");
+            rightDiv.setAttribute('class','right column');
+            rightDiv.innerHTML = data[i].value2;
+                             // Create a <li> node
+            
+            container.appendChild(leftDiv);                             // Append the text to <li>
+            container.appendChild(centralDiv);                             // Append the text to <li>
+            container.appendChild(rightDiv); 
+        }
+        var qContainer = $('#left');
+        // for(i = 0; i < qData.length; i++){
+        //     console.log(qData[i].value);
+        // }
+        var gContainer = $('#right');
+        // for(i = 0; i < gData.length; i++){
+        //     console.log(gData[i].value);
+        // }
+    });
 </script>

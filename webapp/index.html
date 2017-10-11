@@ -1,0 +1,38 @@
+<style type="text/css">
+body{
+	background: #333!important;
+}
+.main_div{
+	width: 45em;
+	height: 30em;
+	cursor: pointer;
+}
+.flex_container{
+	display: flex;
+}
+.oneVSone{
+	background: url("img/1vs1.png") !important;
+	background-size: contain !important;
+	background-repeat: no-repeat !important;
+}
+.blindSearch{
+	background: url("img/blindSearch.png") !important;
+	background-size: contain !important;
+	background-repeat: no-repeat !important;
+}
+</style>
+
+
+<div class="flex_container">
+<div class="main_div blindSearch" onclick="location.href='upload.php';"></div>
+
+<div class="main_div oneVSone" onclick="location.href='comparison.php';"></div>
+</div>
+
+
+<h2> ciao </h2>
+<br>
+
+<a href="upload.php"> BLIND SEARCH <a><br><br>
+
+<a href="comparison.php"> COMPARISON <a>

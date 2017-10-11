@@ -60,24 +60,30 @@ text:hover{
 #file3{
 	background-color: red;
 }*/
-
+/*------------------------1 VS 1-----------------------*/
+body{
+	background: #333!important;
+	font-color: #fff !important;
+}
 .column{
 	height: 100%;
-	width: 33.2%;
+	width: 28%;
 	display: inline-block;
 	float: left;
-
+	min-height: 40px;
+	padding: 18px;
+    text-align: center;
 }
-.column#left{
-	background-color: red;
-}
-
-.column#center{
-	background-color: yellow
+.left{
 }
 
-.column#right{
-	background-color: green
+.central{
+	background: url('/img/label.png');
+	background-size: contain !important;
+	background-repeat: no-repeat !important;
+}
+
+.right{
 }
 
 
