@@ -46,7 +46,8 @@ foreach($filesToDelete as $del){ // iterate files
 
 ?>
 
-<div id = "container" style="background: red; min-height: 100px;"></div>
+<body id="compareResultPage">
+    <div id = "container" min-height:10%;"></div>
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -78,3 +79,6 @@ foreach($filesToDelete as $del){ // iterate files
         // }
     });
 </script>
+
+</body>
+

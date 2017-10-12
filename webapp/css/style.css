@@ -2,15 +2,16 @@
 	transition: all 0.05s ease-in-out;
 }
 
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+body{
+  font-family: monospace;
+  font-size: x-large;
+  background: #333!important;
   height: 600px;
   position: relative;
+  color: darkorange;
 }
 
 svg {
-    border: 1px solid #666;
-    border-radius: 6px;
 	width: 100%;
 	height: 100%;
 }
@@ -33,8 +34,6 @@ text:hover{
 }
 .container{
 	padding: 50px 100px 50px 100px;
-	background: #ccc;
-	border: 1px solid #666;
 	border-radius: 6px;
 }
 #select_treshold{
@@ -48,23 +47,26 @@ text:hover{
 	width: 33.2%;
 	float: left;
 }
-/*
-#file1{
-	background-color: blue;
-}
 
-#file2{
-	background-color: yellow;
-}
-
-#file3{
-	background-color: red;
-}*/
 /*------------------------1 VS 1-----------------------*/
-body{
+body.general{
 	background: #333!important;
-	font-color: #fff !important;
+    margin-top: 10%;
+    font-family: monospace;
+    font-style: inherit;
+    font-size: x-large;
+    color: darkorange;
 }
+
+body.compareResultPage{
+	background: #333!important;
+    margin-top: 10%;
+    font-family: monospace;
+    font-style: inherit;
+    font-size: x-large;
+    color: darkorange;
+}
+
 .column{
 	height: 100%;
 	width: 28%;
@@ -78,7 +80,7 @@ body{
 }
 
 .central{
-	background: url('/img/label.png');
+	/*background: url('../img/label.png');*/
 	background-size: contain !important;
 	background-repeat: no-repeat !important;
 }
@@ -87,6 +89,35 @@ body{
 }
 
 
+a {
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: Helvetica;
+}
+
+a,
+span {
+		font-size: 20px;
+}
+
+.myButton {
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.myButton + label {
+    display: inline-block;
+    border: 3px solid darkorange;
+    margin-bottom: 5%;
+    padding: 1%;
+}
+
+.myButton:focus + label,
+.muButton + label:hover {
+    color: lightgreen;
+}
 
 
 

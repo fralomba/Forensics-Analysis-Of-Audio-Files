@@ -32,6 +32,12 @@ else{
 	echo "<h1>Something Wrong<h1>";
 	exit;}
 
+$filesToDelete = glob('uploads/*'); // get all file names
+foreach($filesToDelete as $del){ // iterate files
+  if(is_file($del))
+    unlink($del); // delete file
+}
+
 ?>
 
 
@@ -43,5 +49,3 @@ else{
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="js/chartPlotter.js"></script>
 
-<button class="container"> BACK </button>
-<button class="container"> INFO </button>
