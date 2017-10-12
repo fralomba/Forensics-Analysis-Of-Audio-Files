@@ -27,7 +27,7 @@ svg.append("g")
 svg.append("g")
 	.attr("class", "lines");
 
-var width = 960,
+var width = 1200,
     height = 450,
 	radius = Math.min(width, height) / 2;
 
@@ -104,7 +104,16 @@ function change(data) {
 		.text(function(d) {
 			return d.data.label;
 		})
-		.attr("onmouse", "function ciao();");
+		.attr("onmouseover", function(d){
+			var l = d.data.label;
+			var v = d.data.value;
+			return "this.innerHTML='"+l+": "+v+"'";
+		})
+		.attr("onmouseout", function(d){
+			var l = d.data.label;
+			var v = d.data.value;
+			return "this.innerHTML='"+l+"';";
+		});
 	
 	function midAngle(d){
 		return d.startAngle + (d.endAngle - d.startAngle)/2;
