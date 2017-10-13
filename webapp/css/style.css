@@ -72,17 +72,17 @@ body.compareResultPage{
 	width: 28%;
 	display: inline-block;
 	float: left;
-	min-height: 40px;
 	padding: 18px;
     text-align: center;
+    max-height: 22px;
+	overflow: scroll ;
 }
 .left{
 }
 
 .central{
-	/*background: url('../img/label.png');*/
-	background-size: contain !important;
-	background-repeat: no-repeat !important;
+	color: #333;
+	background: darkorange;
 }
 
 .right{
@@ -115,7 +115,7 @@ span {
 }
 
 .myButton:focus + label,
-.muButton + label:hover {
+.muButton:hover {
     color: lightgreen;
 }
 
