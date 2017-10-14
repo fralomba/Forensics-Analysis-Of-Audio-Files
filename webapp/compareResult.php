@@ -13,9 +13,18 @@ if(isset($_POST['action']) and $_POST['action'] == 'upload')
         $file1 = $_FILES['user_file1'];
         $file2 = $_FILES['user_file2'];
 
-        echo "<h2><p id='file1' class='fileName'>".$file1['name']."</p></h2>";
-        echo "<h2><p id='file2' class='fileName'>Different Tags</p></h2>";
-        echo "<h2><p id='file3' class='fileName'>".$file2['name']."</p></h2>";
+        echo"
+            <div class='headbar'>
+                <div><h2 id='file1' class=' filename left'>".$file1['name']."</h2></div>
+                <div><h2 id='file2' class=' filename'>Different Tags</h2></div>
+                <div><h2 id='file3' class=' filename right'>".$file2['name']."</h2></div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        ";
 
         if($file1['error'] == UPLOAD_ERR_OK and is_uploaded_file($file1['tmp_name']))
         {
@@ -46,13 +55,17 @@ foreach($filesToDelete as $del){ // iterate files
 
 ?>
 
-<div id = "container" style="background: red; min-height: 100px;"></div>
-
+<body id="compareResultPage">
+    <div id = "container" min-height:10%;"></div>
+    
 <script type="text/javascript">
     $(document).ready(function(){
         var container = document.getElementById("container");
         for(var i = 0; i < data.length; i++){
             //alert(data[i].label);
+            var mainRow = document.createElement("DIV");
+            mainRow.setAttribute('class','flex-row');
+            
             var leftDiv = document.createElement("DIV");
             leftDiv.setAttribute('class','left column');
             leftDiv.innerHTML = data[i].value1;
@@ -64,9 +77,11 @@ foreach($filesToDelete as $del){ // iterate files
             rightDiv.innerHTML = data[i].value2;
                              // Create a <li> node
             
-            container.appendChild(leftDiv);                             // Append the text to <li>
-            container.appendChild(centralDiv);                             // Append the text to <li>
-            container.appendChild(rightDiv); 
+            mainRow.appendChild(leftDiv);                             // Append the text to <li>
+            mainRow.appendChild(centralDiv);                             // Append the text to <li>
+            mainRow.appendChild(rightDiv);
+
+            container.appendChild(mainRow);
         }
         var qContainer = $('#left');
         // for(i = 0; i < qData.length; i++){
@@ -78,3 +93,6 @@ foreach($filesToDelete as $del){ // iterate files
         // }
     });
 </script>
+
+</body>
+

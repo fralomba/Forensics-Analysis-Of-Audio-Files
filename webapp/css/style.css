@@ -1,18 +1,39 @@
+
+
 *{
 	transition: all 0.05s ease-in-out;
 }
-
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+body.general{
+	background: #ddd!important;
+    margin-top: 10%;
+    font-family: monospace;
+    font-style: inherit;
+    font-size: x-large;
+    color: darkblue;
+}
+body{
+  font-family: monospace;
+  font-size: x-large;
+  background: #ddd!important;
   height: 600px;
   position: relative;
+  color: darkblue;
 }
 
+a {
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: Helvetica;
+}
+
+a,
+span {
+		font-size: 20px;
+}
 svg {
-    border: 1px solid #666;
-    border-radius: 6px;
 	width: 100%;
 	height: 100%;
+	background: #eee;
 }
 
 path.slice{
@@ -33,8 +54,6 @@ text:hover{
 }
 .container{
 	padding: 50px 100px 50px 100px;
-	background: #ccc;
-	border: 1px solid #666;
 	border-radius: 6px;
 }
 #select_treshold{
@@ -45,48 +64,74 @@ text:hover{
 
 .fileName{
 	display: inline;
-	width: 33.2%;
+	width: 33.3333%;
 	float: left;
 }
-/*
-#file1{
-	background-color: blue;
-}
 
-#file2{
-	background-color: yellow;
-}
-
-#file3{
-	background-color: red;
-}*/
 /*------------------------1 VS 1-----------------------*/
-body{
-	background: #333!important;
-	font-color: #fff !important;
+
+body.compareResultPage{
+	background: #ddd!important;
+    margin-top: 10%;
+    font-family: monospace;
+    font-style: inherit;
+    font-size: x-large;
+    color: darkblue;
+}
+.flex-row{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 }
 .column{
 	height: 100%;
-	width: 28%;
 	display: inline-block;
 	float: left;
-	min-height: 40px;
-	padding: 18px;
+	padding: 3px;
     text-align: center;
+    width: 33.333333333%;
+	overflow: scroll ;
+	margin-bottom: 3px;
+	flex-grow: 1;
 }
-.left{
-}
-
 .central{
-	background: url('/img/label.png');
-	background-size: contain !important;
-	background-repeat: no-repeat !important;
+	color: #ddd;
+	background: darkblue;
+}
+.myButton {
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
 }
 
-.right{
+.myButton + label {
+    display: inline-block;
+    border: 3px solid darkblue;
+    margin-bottom: 5%;
+    padding: 1%;
 }
 
+label:hover {
+    color: #ddd;
+    background: darkblue;
+    cursor: pointer;
+}
 
+.headbar .filename.left{
+	color: #ccff00 !important;
+}
+.headbar .filename.right{
+	color: #ff0084 !important;
+}
 
-
+.headbar{
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	background: #555;
+	width: 100%;
+	margin-bottom: 500px;
+}
 
