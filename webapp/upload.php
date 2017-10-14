@@ -6,8 +6,8 @@
     </head>
     <body class="general">
         <center>
-            <h1>Welcome on Hector Tool</h1> 
-            <h3>From here you can upload and have a forensics analysis of your audio files.</h3>
+            <h1>Classification</h1> 
+            <h3>From here you can upload and have a forensic analysis of your audio files.</h3>
             <div class="container">
                 <form method="post" action="dbCompareResult.php" enctype="multipart/form-data">
                     <input type="hidden" name="action" value="upload" />

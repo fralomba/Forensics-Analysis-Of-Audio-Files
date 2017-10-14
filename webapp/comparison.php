@@ -6,8 +6,7 @@
     </head>
     <body class="general">
         <center>
-            <h1>1 vs 1</h1> 
-            <h3>Compare</h3>
+            <h1>Identification</h1> 
             <div class="container">
                 <form method="post" action="compareResult.php" enctype="multipart/form-data">
                     <input type="hidden" name="action" value="upload" />
