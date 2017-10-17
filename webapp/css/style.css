@@ -81,7 +81,8 @@ body#compareResultPage{
 .flex-row{
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	border: 0.001px solid darkblue;
+	box-sizing: border-box;
 }
 .column{
 	height: 100%;
@@ -128,11 +129,12 @@ label:hover {
 	justify-content: space-between;
 	background: #ddd;
 	width: 100%;
-	margin-bottom: 500px;
+	/*margin-bottom: 500px;*/
 	text-align: center;
 }
 
 .headbar div{
 	width: 32.5%;
 }
+
 
