@@ -67,13 +67,13 @@ foreach($filesToDelete as $del){ // iterate files
             mainRow.setAttribute('class','flex-row');
             
             var leftDiv = document.createElement("DIV");
-            leftDiv.setAttribute('class','left column');
+            leftDiv.setAttribute('class','evidence column');
             leftDiv.innerHTML = data[i].value1;
             var centralDiv = document.createElement("DIV");
-            centralDiv.setAttribute('class','central column');
+            centralDiv.setAttribute('class','tags');
             centralDiv.innerHTML = data[i].label;
             var rightDiv = document.createElement("DIV");
-            rightDiv.setAttribute('class','right column');
+            rightDiv.setAttribute('class','reference column');
             rightDiv.innerHTML = data[i].value2;
                              // Create a <li> node
             
