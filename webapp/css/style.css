@@ -70,9 +70,9 @@ text:hover{
 
 /*------------------------1 VS 1-----------------------*/
 
-body.compareResultPage{
+body#compareResultPage{
 	background: #ddd!important;
-    margin-top: 10%;
+	margin: 0;
     font-family: monospace;
     font-style: inherit;
     font-size: x-large;
@@ -112,26 +112,27 @@ body.compareResultPage{
     padding: 1%;
 }
 
+
 label:hover {
     color: #ddd;
     background: darkblue;
     cursor: pointer;
 }
 
-.headbar .filename.left{
-	color: #ccff00 !important;
-}
-.headbar .filename.right{
-	color: #ff0084 !important;
-}
-
 .headbar{
 	position: fixed;
+	border: 4px solid darkblue;
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
-	background: #555;
+	justify-content: space-between;
+	background: #ddd;
 	width: 100%;
 	margin-bottom: 500px;
+	text-align: center;
+}
+
+.headbar div{
+	width: 32.5%;
 }
 

@@ -35,6 +35,9 @@ def updateTables(field):
         query = "ALTER TABLE `dataset` ADD `"+field+"`  VARCHAR(255) NULL DEFAULT NULL AFTER `id`;"
         runQuery(query)
 
+    countQuery = "SELECT COUNT(*) as 'totElements' FROM knownMetadata"
+    countResult = runQuery(countQuery)
+    
 def runQuery(query):
     connection = pymysql.connect(host=host,user=user,password=pw,db=database,charset='utf8mb4',port=port,cursorclass=pymysql.cursors.DictCursor)
     try:

@@ -83,14 +83,6 @@ foreach($filesToDelete as $del){ // iterate files
 
             container.appendChild(mainRow);
         }
-        var qContainer = $('#left');
-        // for(i = 0; i < qData.length; i++){
-        //     console.log(qData[i].value);
-        // }
-        var gContainer = $('#right');
-        // for(i = 0; i < gData.length; i++){
-        //     console.log(gData[i].value);
-        // }
     });
 </script>
 
