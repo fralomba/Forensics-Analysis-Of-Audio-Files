@@ -5,12 +5,14 @@ pw = 'root'
 host = 'localhost'
 port = 8889
 
+#Insert rows in the database from a dictionari... basically create a string in the SQL Query format
 def insertFromDic(dictionary):
     queryHead, queryValues = "INSERT INTO `dataset`(`id`", ") VALUES (NULL"
-    for key in dictionary:
-        
+    for key in dictionary:    
         data = str(dictionary[key])
+        #Haven't seen this key yet?!
         updateTables(key)
+        #If it's not a duplicated field (no, if a key it's of EX that it's different by a MI key)
         if not(key in queryHead):
             queryHead += ",`" + key.replace("`", '"') + "`"
             queryValues += ",'" + data.replace("'", '"') + "'"
@@ -21,8 +23,7 @@ def insertFromDic(dictionary):
 
 #this function get a Filed as parameter and, if it's a never seen Metadata, tables are updated to contain it.
 def updateTables(field):
-    #connection = pymysql.connect(host=host,user=user,password=pw,db=database,charset='utf8mb4',port=port,cursorclass=pymysql.cursors.DictCursor)
-    #this query check if there is an occurrence of the field
+    #same routine... make a great query!
     query = "SELECT COUNT(Name) as 'occurrencies' FROM knownMetadata WHERE Name = '"+field.replace(' ','')+"'"
     
     result = runQuery(query)
@@ -35,6 +36,7 @@ def updateTables(field):
         query = "ALTER TABLE `dataset` ADD `"+field+"`  VARCHAR(255) NULL DEFAULT NULL AFTER `id`;"
         runQuery(query)
 
+#This function get a string and try to execue that on sql server. See pymysql documentation.
 def runQuery(query):
     connection = pymysql.connect(host=host,user=user,password=pw,db=database,charset='utf8mb4',port=port,cursorclass=pymysql.cursors.DictCursor)
     try:
@@ -45,7 +47,7 @@ def runQuery(query):
     finally:
         connection.close()
     return result
-
+#
 def simplyfieDictionary(dictionary):
     newDict = {}
     for key in dictionary:
