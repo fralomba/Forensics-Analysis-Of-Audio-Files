@@ -1,6 +1,6 @@
 <style type="text/css">
 body{
-	background: #333!important;
+	background: lightgrey !important;
 }
 .main_div{
 	width: 45em;
@@ -22,8 +22,15 @@ body{
 }
 </style>
 
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
 
 <div class="flex_container">
-	<div class="main_div blindSearch" onclick="location.href='upload.php';"></div>
-	<div class="main_div oneVSone" onclick="location.href='comparison.php';"></div>
+	<div class="main_div blindSearch" onclick="location.href='pre_classify.php';"></div>
+	<div class="main_div oneVSone" onclick="location.href='pre_compare.php';"></div>
 </div>
+
+<button type="button" class="indexPageButton" onclick="location.href='utils/cacheCleaner.php'">Clean cache</button>
+<button type="button" id = "rightIndexPageButton" class="indexPageButton" onclick="location.href='addFiles.php'">Add files</button>
+<!-- <a href="utils/cacheCleaner.php">Clean Cache</a> -->
+

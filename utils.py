@@ -29,7 +29,7 @@ def extractRow(file_path):
 		if ETmetadata[key]:
 			row[cleanKey(key,'ET')] = ETmetadata[key]
 		else:
-			row[cleanKey(key,'ET')] = "PENE"
+			row[cleanKey(key,'ET')] = "xxx"
 
 #EXTRACT FROM MEDIA INFO
 #____________________________________________________Extraction using MediaInfo: see documentation for routine
