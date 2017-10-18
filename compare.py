@@ -8,14 +8,15 @@ import utils
 
 def perpareToJSON(dic1, dic2):
 	string = '['
+	
 	for key in dic1:
 		if key in dic2:
-			string += "{ 'label':' " + str(key).replace("'",'"') + "', 'value1':'" + str(dic1[key]).replace("'",'"') + "', 'value2':'" + str(dic2[key]).replace("'",'"') + "'},"
+			string += "{ 'label':'" + str(key).replace("'",'"') + "', 'value1':'" + str(dic1[key]).replace("'",'"') + "', 'value2':'" + str(dic2[key]).replace("'",'"') + "'},"
 		else:
-			string += "{ 'label':' " + str(key).replace("'",'"') + "', 'value1':'" + str(dic1[key]).replace("'",'"') + "', 'value2':' NON MESSO'},"
+			string += "{ 'label':'" + str(key).replace("'",'"') + "', 'value1':'" + str(dic1[key]).replace("'",'"') + "', 'value2':' ABSENT'},"
 	for key in dic2:
 		if key not in dic1:
-			string += "{ 'label':' " + str(key).replace("'",'"') + "', 'value1':'NON MESSO', 'value2':'" + str(dic2[key]).replace("'",'"') + "'},"
+			string += "{ 'label':'" + str(key).replace("'",'"') + "', 'value1':'ABSENT', 'value2':'" + str(dic2[key]).replace("'",'"') + "'},"
 	return string+"]"
 
 if len(sys.argv) > 2:
@@ -42,6 +43,9 @@ gResult = {}
 for gKey in galleryElement:
 	if (gKey not in queryElement) or not(galleryElement[gKey] == queryElement[gKey]):
 		gResult[gKey] = galleryElement[gKey]
+#add lenght informations
+gResult['LUNGHEZZA'] = len(galleryElement)
+qResult['LUNGHEZZA'] = len(queryElement)
 
 print "var data = " + perpareToJSON(qResult, gResult) + ";"
 		

@@ -37,6 +37,7 @@ def updateTables(field):
         runQuery(query)
 
 #This function get a string and try to execue that on sql server. See pymysql documentation.
+
 def runQuery(query):
     connection = pymysql.connect(host=host,user=user,password=pw,db=database,charset='utf8mb4',port=port,cursorclass=pymysql.cursors.DictCursor)
     try:

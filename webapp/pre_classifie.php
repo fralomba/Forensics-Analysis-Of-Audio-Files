@@ -6,16 +6,16 @@
     </head>
     <body class="general">
         <center>
-            <h1>Welcome on Hector Tool</h1> 
-            <h3>From here you can upload and have a forensics analysis of your audio files.</h3>
+            <h1>Classification</h1> 
+            <h3>From here you can upload and have a forensic analysis of your audio files.</h3>
             <div class="container">
-                <form method="post" action="dbCompareResult.php" enctype="multipart/form-data">
+                <form method="post" action="classifie.php" enctype="multipart/form-data">
                     <input type="hidden" name="action" value="upload" />
                     <input type="file" id = "getFile" class = "myButton" name="user_file" />
-                    <label for="getFile">Carica il tuo file!</label>
+                    <label for="getFile">Load Evidence</label>
                     <br />
                     <input type="submit" id = "compareFile" class = "myButton" name="user_file" />
-                    <label for="compareFile">Compara</label>
+                    <label for="compareFile">Classify</label>
                 </form>
             </div>
         </center>
