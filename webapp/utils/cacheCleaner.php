@@ -1,8 +1,6 @@
 
 <?php
-
-define("UPLOAD_DIR", "../uploads/");
-$filesToDelete = glob('uploads/*'); // get all file names
+$filesToDelete = glob('../uploads/*'); // get all file names
 foreach($filesToDelete as $del){ // iterate files
   if(is_file($del))
     unlink($del); // delete file
