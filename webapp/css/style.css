@@ -1,4 +1,6 @@
-
+.alert{
+	color: red !important;
+}
 
 *{
 	transition: all 0.05s ease-in-out;

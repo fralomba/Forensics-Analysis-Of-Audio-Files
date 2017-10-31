@@ -83,7 +83,11 @@ else{
                 leftDiv.setAttribute('class','evidence column');
                 leftDiv.innerHTML = data[i].value1;
                 var centralDiv = document.createElement("DIV");
-                centralDiv.setAttribute('class','tags');
+                
+                ((data[i].alert) != 0)? 
+                    centralDiv.setAttribute('class','tags alert'):
+                    centralDiv.setAttribute('class','tags');
+
                 centralDiv.innerHTML = data[i].label;
                 var rightDiv = document.createElement("DIV");
                 rightDiv.setAttribute('class','reference column');
