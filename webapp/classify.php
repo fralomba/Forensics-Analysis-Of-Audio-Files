@@ -44,7 +44,7 @@ else{
 
 
 <div>
-    treshold:
+    Threshold:
     <input type="range" id="select_treshold" name="select_treshold" min="0" max="1000" oninput="updateTreshold()">
 </div>
 <br>

@@ -8,10 +8,18 @@ import utils
 
 def perpareToJSON(dic1, dic2):
 	string = '['
-	alert = 1
+	with open('tagsBlackList.txt') as file:
+		lines = file.read().split("\n")
+
+	alert = 0
+
 	for key in dic1:
 		if key in dic2:
+			alert = 0
+			if key in lines:
+				alert = 1
 			string += "{ 'label':'" + str(key).replace("'",'"') + "', 'alert':'" + str(alert) + "', 'value1':'" + str(dic1[key]).replace("'",'"') + "', 'value2':'" + str(dic2[key]).replace("'",'"') + "'},"
+			#string += "{ 'label':'" + str(key).replace("'",'"') + "', 'alert':'" + str(alert) + "', 'value1':'" + str(dic1[key]).replace("'",'"') + "', 'value2':'" + str(dic2[key]).replace("'",'"') + "'},"
 		else:
 			string += "{ 'label':'" + str(key).replace("'",'"') + "', 'alert':'" + str(alert) + "', 'value1':'" + str(dic1[key]).replace("'",'"') + "', 'value2':' ABSENT'},"
 	for key in dic2:
