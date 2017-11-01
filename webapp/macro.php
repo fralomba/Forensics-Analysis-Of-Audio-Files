@@ -35,7 +35,9 @@ else{
 <div id = "container" min-height:10%;">
     <div class="headbar">
         <h2><?php echo $file; ?></h2>
-    </div>
+        <br>
+        <h7 id='size'>9<h7>    
+        </div>
     <br><br><br><br><br>
 </div>
     
@@ -46,7 +48,7 @@ else{
             //alert(data[i].label);
 
             if(String(data[i].label).localeCompare("LUNGHEZZA") == 0){
-                document.getElementById("differentSize").innerHTML = 'shown '+(data.length-1);
+                document.getElementById("size").innerHTML = 'shown '+(data.length-1);
             }else{
                 var mainRow = document.createElement("DIV");
                 mainRow.setAttribute('class','flex-row');

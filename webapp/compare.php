@@ -19,15 +19,15 @@ if(isset($_POST['action']) and $_POST['action'] == 'upload')
                     <a target='_blank' href='macro.php?object=".UPLOAD_DIR.$file1['name']."'>
                         <h2 id='file1' class=' filename left'>".$file1['name']."</h2>
                     </a>
-                    <h7 id='evidenceSize'>9<h7>
+                    <h7 id='evidenceSize'>NaN<h7>
                 </div>
                 <div>
-                    <h2 id='file2' class=' filename'>Different Tags</h2><h7 id='differentSize'>9<h7></div>
+                    <h2 id='file2' class=' filename'>Different Tags</h2><h7 id='differentSize'>NaN<h7></div>
                 <div>
                     <a target='_blank' href='macro.php?object=".UPLOAD_DIR.$file2['name']."'>
                         <h2 id='file3' class=' filename right'>".$file2['name']."</h2>
                     </a>
-                    <h7 id='referenceSize'>9<h7>
+                    <h7 id='referenceSize'>NaN<h7>
                 </div>
             </div>
             <br><br><br><br><br>

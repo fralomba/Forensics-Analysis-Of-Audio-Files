@@ -16,7 +16,7 @@ def perpareToJSON(dic):
 if len(sys.argv) > 1:
 	file = sys.argv[1]
 else:
-	file = "/Users/adel/Desktop/FAOAF/Samples/iphone7.m4a"
+	file = "/Users/adel/Desktop/dataset FAOAF/d003_LG_Nexus5_7.0.1/Muto.wav"
 
 matchResult = {}
 
