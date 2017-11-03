@@ -47,8 +47,8 @@ $command = 'export LC_ALL=en_US.UTF-8
          python ../compare.py '.
                                 UPLOAD_DIR.$file1['name'].' '.
                                 UPLOAD_DIR.$file2['name'].' '.
-                                LISTS_DIR.'tagsBlackList.txt'.' '.
-                                LISTS_DIR.'tagsIgnoredList.txt';
+                                LISTS_DIR.'/tagsBlackList.txt'.' '.
+                                LISTS_DIR.'/tagsIgnoredList.txt';
 
 $output = shell_exec($command);
 
