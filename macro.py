@@ -1,22 +1,18 @@
-#http://pymysql.readthedocs.io/en/latest/user/examples.html
-import sqlInterface as sql
-import operator
-import metric
+
 import sys
-import json
 import utils 
 
 def perpareToJSON(dic):
-	string = '['
+	string = '[\n'
 	
 	for key in dic:
-		string += "{ 'label':'" + str(key).replace("'",'"') + "', 'value':'" + str(dic[key]).replace("'",'"') + "'},"
+		string += "{ 'label':'" + str(key).replace("'",'"') + "', 'value':'" + str(dic[key]).replace("'",'"') + "'},\n"
 	return string+"]"
 
 if len(sys.argv) > 1:
 	file = sys.argv[1]
 else:
-	file = "/Users/adel/Desktop/dataset FAOAF/d003_LG_Nexus5_7.0.1/Muto.wav"
+	file = "/Users/adel/Desktop/FAOAF/Samples/iphone7.m4a"
 
 matchResult = {}
 

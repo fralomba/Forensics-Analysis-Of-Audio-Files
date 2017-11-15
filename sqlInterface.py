@@ -1,4 +1,5 @@
 import pymysql
+
 database = 'forensicsAnalysis'
 user = 'root'
 pw = 'root'

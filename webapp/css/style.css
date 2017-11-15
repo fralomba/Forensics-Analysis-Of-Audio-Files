@@ -44,17 +44,12 @@ span {
 	box-sizing: border-box;
 	color: darkblue;
 	font-family: monospace;
-	margin-left: 15%;
+	margin-left: 19%;
 }
 
 .indexPageButton:hover{
 	color: #ddd;
 	background-color:darkblue;
-}
-
-#rightIndexPageButton{
-	float: right;
-	margin-right: 15%;
 }
 
 svg {

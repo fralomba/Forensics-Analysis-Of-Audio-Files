@@ -1,6 +1,5 @@
 #http://pymysql.readthedocs.io/en/latest/user/examples.html
 import sqlInterface as sql
-import operator
 import metric
 import sys
 import utils 
@@ -8,14 +7,14 @@ import utils
 def perpareToJSON(dic):
 	string = '['
 	for key in dic:
-		string += "{ 'label':' " + str(key) + "', 'value': " + str(dic[key]) + "},"
+		string += "{ 'label':' " + str(key) + "', 'value': " + str(dic[key]) + "},\n"
 	return string+"]"
 
 if len(sys.argv) > 1:
 	file = sys.argv[1]
 else:
 	filename = 'iphone6.m4a'
-	file = "/Users/francesco/Desktop/Forensics-Analysis-Of-Audio-Files/Samples/"+filename
+	file = "/Users/adel/Desktop/FAOAF/Samples/"+filename
 
 matchResult = {}
 # with exiftool.ExifTool() as et:

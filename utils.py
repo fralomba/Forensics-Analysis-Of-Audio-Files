@@ -22,7 +22,7 @@ def extractRow(file_path):
 
 		
 	row = {}
-	#row['groundtruth'] = deviceModel.split('.')[0]
+	row['groundtruth'] = file_path.split('/')[-1]
 #EXTRACT FROM EXIFTOOL
 #____________________________________________________Extraction using exiftool: see documentation for routine
 	for key in ETmetadata:
