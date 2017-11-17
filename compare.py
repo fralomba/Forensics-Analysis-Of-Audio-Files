@@ -18,19 +18,18 @@ def perpareToJSON(dic1, dic2, blackList, ignoredList):
 				string += "{ 'label':'" + str(key).replace("'",'"') + "', 'alert':'" + str(key in blackList) + "', 'value1':'ABSENT', 'value2':'" + str(dic2[key]).replace("'",'"') + "'},\n"
 	return string+"]"
 
-if len(sys.argv) > 1 and len(sys.argv) < 3:
+if len(sys.argv) > 1 and len(sys.argv) < 4:
 	file1 = sys.argv[1]
 	file2 = sys.argv[2]
 	blackList = []
 	ignoredList = []
-if len(sys.argv) > 3:
+elif len(sys.argv) > 3:
 	file1 = sys.argv[1]
 	file2 = sys.argv[2]
 	with open( sys.argv[3] ) as file:
 		blackList = file.read().split("\n")
 	with open( sys.argv[4] ) as file:
 		ignoredList = file.read().split("\n")
-
 else:
 	file1 = "/Users/adel/Desktop/FAOAF/Samples/iphone7.m4a"
 	file2 = "/Users/adel/Desktop/FAOAF/Samples/GalaxyS4.m4a"
