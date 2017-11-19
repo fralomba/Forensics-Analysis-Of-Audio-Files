@@ -1,2 +1,7 @@
 MI:file_size
 MI:file_name
+groundtruth
+ET:SourceFile
+MI:complete_name
+MI:track_type
+ET:FileName

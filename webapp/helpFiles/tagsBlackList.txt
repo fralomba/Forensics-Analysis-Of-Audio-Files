@@ -1,5 +1,13 @@
-ET:FileName
-MI:file_size
-audition
-MI:datasize
+MI:kind_of_stream
+ET:Error
 ET:FileSize
+MI:other_stream_size
+MI:stream_size
+MI:other_kind_of_stream
+MI:other_file_size
+MI:comandroidversion
+MI:encoded_date
+ET:MediaTimeScale
+ET:CreateDate
+ET:FileTypeExtension
+MI:codecid_compatible

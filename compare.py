@@ -8,10 +8,10 @@ def perpareToJSON(dic1, dic2, blackList, ignoredList):
 	for key in dic1:
 		if key not in ignoredList:
 			if key in dic2:
-				string += "{ 'label':'" + str(key).replace("'",'"') + "', 'alert':'" + str(key in blackList) + "', 'value1':'" + str(dic1[key]).replace("'",'"') + "', 'value2':'" + str(dic2[key]).replace("'",'"') + "'},\n"
+				string += "{ 'label':'" + str(key).replace("'",'"') + "', 'alert':'" + str((key in blackList) and (dic1[key] != dic2[key])) + "', 'value1':'" + str(dic1[key]).replace("'",'"') + "', 'value2':'" + str(dic2[key]).replace("'",'"') + "'},\n"
 			else:
 				string += "{ 'label':'" + str(key).replace("'",'"') + "', 'alert':'" + str(key in blackList) + "', 'value1':'" + str(dic1[key]).replace("'",'"') + "', 'value2':' ABSENT'},\n"
-	
+
 	for key in dic2:
 		if key not in ignoredList:
 			if key not in dic1 :
@@ -31,8 +31,9 @@ elif len(sys.argv) > 3:
 	with open( sys.argv[4] ) as file:
 		ignoredList = file.read().split("\n")
 else:
-	file1 = "/Users/adel/Desktop/FAOAF/Samples/iphone7.m4a"
-	file2 = "/Users/adel/Desktop/FAOAF/Samples/GalaxyS4.m4a"
+	#str((key in blackList) and (dic1[key] != dic2[key]))
+	file1 = "/Users/adel/Desktop/FAOAF/webapp/uploads/SamusngS6_7.0_sample0Ableton9.wav"
+	file2 = "/Users/adel/Desktop/FAOAF/webapp/uploads/IphoneSE_10.0.3_sample0Ableton9.wav"
 	blackList = []
 	ignoredList = []
 
@@ -46,12 +47,12 @@ galleryElement = utils.extractRow(file2)
 
 qResult = {}
 for qKey in queryElement:
-	if (qKey not in galleryElement) or not(galleryElement[qKey] == queryElement[qKey]):
+	if (qKey not in galleryElement) or (galleryElement[qKey] != queryElement[qKey]):
 		qResult[qKey] = queryElement[qKey]
 
 gResult = {}
 for gKey in galleryElement:
-	if (gKey not in queryElement) or not(galleryElement[gKey] == queryElement[gKey]):
+	if (gKey not in queryElement) or (galleryElement[gKey] != queryElement[gKey]):
 		gResult[gKey] = galleryElement[gKey]
 #add lenght informations
 gResult['LUNGHEZZA'] = len(galleryElement)
