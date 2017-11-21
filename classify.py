@@ -12,9 +12,8 @@ def perpareToJSON(dic):
 
 if len(sys.argv) > 1:
 	file = sys.argv[1]
-else:
-	filename = 'iphone6.m4a'
-	file = "/Users/adel/Desktop/FAOAF/Samples/"+filename
+
+file = "/Users/adel/Desktop/FAOAF/webapp/uploads/_GalaxyS8_sample0.m4a"
 
 matchResult = {}
 # with exiftool.ExifTool() as et:

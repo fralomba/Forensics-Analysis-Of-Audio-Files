@@ -3,11 +3,11 @@ import utils
 import sys
 import sqlInterface as sql
 
-if len(sys.argv) > 0:
-	root = sys.argv[0]
+if len(sys.argv) > 1:
+	root = sys.argv[1]
 
-root = '/Users/adel/Desktop/DatasetAudioFiles/'
 file_path = ''
+
 for folder in os.listdir(root):
 	file_path = root + folder + '/'
 	if os.path.isdir(file_path):

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
 
 <?php
 
@@ -16,7 +16,8 @@ if(isset($_POST['action']) and $_POST['action'] == 'upload')
             </a>";
         if($file['error'] == UPLOAD_ERR_OK and is_uploaded_file($file['tmp_name']))
         {
-            move_uploaded_file($file['tmp_name'], UPLOAD_DIR.$file['name']);
+            if ( !move_uploaded_file($file['tmp_name'], UPLOAD_DIR.$file['name']) )
+                echo 'file non caricato';
         }
     }
 }
@@ -29,10 +30,10 @@ $command = 'export LC_ALL=en_US.UTF-8
 $output = shell_exec($command);
 
 if($output != NULL)
-echo "<script>var datas =".$output.";</script>";
+    echo "<script>var datas =".$output.";</script>";
 else{
 	echo "<h1>Something Wrong<h1>";
-	exit;}
+}
 
 // $filesToDelete = glob('uploads/*'); // get all file names
 // foreach($filesToDelete as $del){ // iterate files

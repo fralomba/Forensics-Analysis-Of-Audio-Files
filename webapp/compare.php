@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
 
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="css/style.css">

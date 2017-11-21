@@ -11,3 +11,4 @@ ET:MediaTimeScale
 ET:CreateDate
 ET:FileTypeExtension
 MI:codecid_compatible
+ET:HandlerVendorID
