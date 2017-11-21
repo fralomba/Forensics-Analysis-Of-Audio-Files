@@ -17,7 +17,8 @@ def perpareToJSON(dic1, dic2, blackList, ignoredList):
 			if key not in dic1 :
 				string += "{ 'label':'" + str(key).replace("'",'"') + "', 'alert':'" + str(key in blackList) + "', 'value1':'ABSENT', 'value2':'" + str(dic2[key]).replace("'",'"') + "'},\n"
 	return string+"]"
-
+##_______________________________________________script starts here
+#read input from command line
 if len(sys.argv) > 1 and len(sys.argv) < 4:
 	file1 = sys.argv[1]
 	file2 = sys.argv[2]
@@ -31,17 +32,11 @@ elif len(sys.argv) > 3:
 	with open( sys.argv[4] ) as file:
 		ignoredList = file.read().split("\n")
 else:
-	#str((key in blackList) and (dic1[key] != dic2[key]))
-	file1 = "/Users/adel/Desktop/FAOAF/webapp/uploads/SamusngS6_7.0_sample0Ableton9.wav"
-	file2 = "/Users/adel/Desktop/FAOAF/webapp/uploads/IphoneSE_10.0.3_sample0Ableton9.wav"
-	blackList = []
-	ignoredList = []
+	print "not enought arguments"
 
 matchResult = {}
 
-# with exiftool.ExifTool() as et: 
-#     metadata = et.get_metadata_batch(file)[0]
-
+#e
 queryElement = utils.extractRow(file1)
 galleryElement = utils.extractRow(file2)
 
@@ -54,6 +49,7 @@ gResult = {}
 for gKey in galleryElement:
 	if (gKey not in queryElement) or (galleryElement[gKey] != queryElement[gKey]):
 		gResult[gKey] = galleryElement[gKey]
+
 #add lenght informations
 gResult['LUNGHEZZA'] = len(galleryElement)
 qResult['LUNGHEZZA'] = len(queryElement)

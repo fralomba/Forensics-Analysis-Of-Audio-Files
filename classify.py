@@ -1,4 +1,3 @@
-#http://pymysql.readthedocs.io/en/latest/user/examples.html
 import sqlInterface as sql
 import metric
 import sys
@@ -12,12 +11,11 @@ def perpareToJSON(dic):
 
 if len(sys.argv) > 1:
 	file = sys.argv[1]
-
-file = "/Users/adel/Desktop/FAOAF/webapp/uploads/_GalaxyS8_sample0.m4a"
+else:
+	print "not enought arguments"
 
 matchResult = {}
-# with exiftool.ExifTool() as et:
-#     metadata = et.get_metadata_batch(file)[0]
+
 totRows = sql.runQuery("SELECT max(id) as 'tot' FROM dataset ")['tot']
 
 queryElement = utils.extractRow(file)

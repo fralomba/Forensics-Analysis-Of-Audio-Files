@@ -1,12 +1,17 @@
 import os
-root = '/Users/adel/Desktop/datasetAudioFiles/'
+
+if len(sys.argv) > 1:
+	root = sys.argv[1]
+else:
+	print "not enought arguments"
+
 i = 0
 for folder in os.listdir(root):
 	if os.path.isdir(root + folder) and folder[0:2] != 'F0':
 		if i <= 9:
-			print os.rename(root + folder, root + 'D000' + str(i) + '_' + folder)		#cambia nome alle cartelle
+			os.rename(root + folder, root + 'D000' + str(i) + '_' + folder)		#cambia nome alle cartelle
 		else:
-			print os.rename(root + folder, root + 'D00' + str(i) + '_' + folder)		#cambia nome alle cartelle
+			os.rename(root + folder, root + 'D00' + str(i) + '_' + folder)		#cambia nome alle cartelle
 		i = i+1
 
 i = 0
@@ -18,9 +23,9 @@ for folder in os.listdir(root):
 				splittedFile = file.split('.')
 				suffix = splittedFile[len(splittedFile)-1]
 				if i <= 9:
-					print os.rename(folderpath + file, folderpath + folder[6:] + '_sample' + str(i) + '.' + suffix)
+					os.rename(folderpath + file, folderpath + folder[6:] + '_sample' + str(i) + '.' + suffix)
 				else:
-					print os.rename(folderpath + file, folderpath + folder[6:] + '_sample' + str(i) + '.' + suffix)
+					os.rename(folderpath + file, folderpath + folder[6:] + '_sample' + str(i) + '.' + suffix)
 				i = i+1
 
 		i = 0

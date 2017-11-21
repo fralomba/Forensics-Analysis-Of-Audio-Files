@@ -12,7 +12,7 @@ def perpareToJSON(dic):
 if len(sys.argv) > 1:
 	file = sys.argv[1]
 else:
-	file = "/Users/adel/Desktop/FAOAF/Samples/iphone7.m4a"
+	print "not enought arguments"
 
 matchResult = {}
 

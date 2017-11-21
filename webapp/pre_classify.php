@@ -11,9 +11,11 @@
             <div class="container">
                 <form method="post" action="classify.php" enctype="multipart/form-data">
                     <input type="hidden" name="action" value="upload" />
+                    
                     <input type="file" id = "getFile" class = "myButton" name="user_file" />
                     <label for="getFile">Load Evidence</label>
                     <br />
+
                     <input type="submit" id = "compareFile" class = "myButton" name="user_file" />
                     <label for="compareFile">Classify</label>
                 </form>
