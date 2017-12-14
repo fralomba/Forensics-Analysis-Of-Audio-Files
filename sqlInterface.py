@@ -1,6 +1,6 @@
 import pymysql
 
-database = 'marika'
+database = 'forensicsAnalysis'
 user = 'root'
 pw = 'root'
 host = 'localhost'

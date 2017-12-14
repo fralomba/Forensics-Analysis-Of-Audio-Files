@@ -32,7 +32,7 @@ $output = shell_exec($command);
 if($output != NULL)
     echo "<script>var datas =".$output.";</script>";
 else{
-	echo "<h1>Something Wrong<h1>";
+	echo $command;
 }
 
 // $filesToDelete = glob('uploads/*'); // get all file names
